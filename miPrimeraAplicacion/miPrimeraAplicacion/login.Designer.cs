@@ -118,6 +118,7 @@
             this.Controls.Add(this.lblTituloLogin);
             this.Name = "login";
             this.Text = "login";
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

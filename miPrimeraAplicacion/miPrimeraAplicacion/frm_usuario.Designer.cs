@@ -44,8 +44,9 @@ namespace miPrimeraAplicacion
             this.grbNavegacionUsuario.SuspendLayout();
             this.grbEdicionUsuario.SuspendLayout();
             this.SuspendLayout();
-
+            // 
             // grbDatosUsuario
+            // 
             this.grbDatosUsuario.Controls.Add(this.txtIdUsuario);
             this.grbDatosUsuario.Controls.Add(this.txtUsuario);
             this.grbDatosUsuario.Controls.Add(this.txtClaveUsuario);
@@ -65,77 +66,42 @@ namespace miPrimeraAplicacion
             this.grbDatosUsuario.TabIndex = 0;
             this.grbDatosUsuario.TabStop = false;
             this.grbDatosUsuario.Text = "Datos";
-
-            // lblIdUsuario
-            this.lblIdUsuario.AutoSize = true;
-            this.lblIdUsuario.Location = new System.Drawing.Point(25, 45);
-            this.lblIdUsuario.Name = "lblIdUsuario";
-            this.lblIdUsuario.Size = new System.Drawing.Size(40, 26);
-            this.lblIdUsuario.TabIndex = 0;
-            this.lblIdUsuario.Text = "ID:";
-
+            // 
             // txtIdUsuario
+            // 
             this.txtIdUsuario.Location = new System.Drawing.Point(150, 42);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.ReadOnly = true;
-            this.txtIdUsuario.Size = new System.Drawing.Size(240, 29);
+            this.txtIdUsuario.Size = new System.Drawing.Size(240, 40);
             this.txtIdUsuario.TabIndex = 1;
-
-            // lblUsuario
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(25, 100);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(85, 26);
-            this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Usuario:";
-
+            // 
             // txtUsuario
+            // 
             this.txtUsuario.Location = new System.Drawing.Point(150, 97);
             this.txtUsuario.MaxLength = 16;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(350, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(350, 40);
             this.txtUsuario.TabIndex = 3;
-
-            // lblClaveUsuario
-            this.lblClaveUsuario.AutoSize = true;
-            this.lblClaveUsuario.Location = new System.Drawing.Point(25, 155);
-            this.lblClaveUsuario.Name = "lblClaveUsuario";
-            this.lblClaveUsuario.Size = new System.Drawing.Size(70, 26);
-            this.lblClaveUsuario.TabIndex = 4;
-            this.lblClaveUsuario.Text = "Clave:";
-
+            // 
             // txtClaveUsuario
+            // 
             this.txtClaveUsuario.Location = new System.Drawing.Point(150, 152);
             this.txtClaveUsuario.MaxLength = 35;
             this.txtClaveUsuario.Name = "txtClaveUsuario";
-            this.txtClaveUsuario.Size = new System.Drawing.Size(500, 29);
+            this.txtClaveUsuario.Size = new System.Drawing.Size(500, 40);
             this.txtClaveUsuario.TabIndex = 5;
             this.txtClaveUsuario.UseSystemPasswordChar = true;
-
-            // lblNombreUsuario
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(25, 210);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(94, 26);
-            this.lblNombreUsuario.TabIndex = 6;
-            this.lblNombreUsuario.Text = "Nombre:";
-
+            // 
             // txtNombreUsuario
+            // 
             this.txtNombreUsuario.Location = new System.Drawing.Point(150, 207);
             this.txtNombreUsuario.MaxLength = 65;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(600, 29);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(600, 40);
             this.txtNombreUsuario.TabIndex = 7;
-
-            // lblDireccionUsuario
-            this.lblDireccionUsuario.AutoSize = true;
-            this.lblDireccionUsuario.Location = new System.Drawing.Point(25, 265);
-            this.lblDireccionUsuario.Name = "lblDireccionUsuario";
-            this.lblDireccionUsuario.Size = new System.Drawing.Size(106, 26);
-            this.lblDireccionUsuario.TabIndex = 8;
-            this.lblDireccionUsuario.Text = "Dirección:";
-
+            // 
             // txtDireccionUsuario
+            // 
             this.txtDireccionUsuario.Location = new System.Drawing.Point(150, 262);
             this.txtDireccionUsuario.MaxLength = 85;
             this.txtDireccionUsuario.Multiline = true;
@@ -143,23 +109,71 @@ namespace miPrimeraAplicacion
             this.txtDireccionUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDireccionUsuario.Size = new System.Drawing.Size(600, 105);
             this.txtDireccionUsuario.TabIndex = 9;
-
-            // lblTelefonoUsuario
-            this.lblTelefonoUsuario.AutoSize = true;
-            this.lblTelefonoUsuario.Location = new System.Drawing.Point(25, 400);
-            this.lblTelefonoUsuario.Name = "lblTelefonoUsuario";
-            this.lblTelefonoUsuario.Size = new System.Drawing.Size(100, 26);
-            this.lblTelefonoUsuario.TabIndex = 10;
-            this.lblTelefonoUsuario.Text = "Teléfono:";
-
+            // 
             // txtTelefonoUsuario
+            // 
             this.txtTelefonoUsuario.Location = new System.Drawing.Point(150, 397);
             this.txtTelefonoUsuario.MaxLength = 9;
             this.txtTelefonoUsuario.Name = "txtTelefonoUsuario";
-            this.txtTelefonoUsuario.Size = new System.Drawing.Size(240, 29);
+            this.txtTelefonoUsuario.Size = new System.Drawing.Size(240, 40);
             this.txtTelefonoUsuario.TabIndex = 11;
-
+            // 
+            // lblIdUsuario
+            // 
+            this.lblIdUsuario.AutoSize = true;
+            this.lblIdUsuario.Location = new System.Drawing.Point(25, 45);
+            this.lblIdUsuario.Name = "lblIdUsuario";
+            this.lblIdUsuario.Size = new System.Drawing.Size(53, 32);
+            this.lblIdUsuario.TabIndex = 0;
+            this.lblIdUsuario.Text = "ID:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(25, 100);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(118, 32);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "Usuario:";
+            // 
+            // lblClaveUsuario
+            // 
+            this.lblClaveUsuario.AutoSize = true;
+            this.lblClaveUsuario.Location = new System.Drawing.Point(25, 155);
+            this.lblClaveUsuario.Name = "lblClaveUsuario";
+            this.lblClaveUsuario.Size = new System.Drawing.Size(91, 32);
+            this.lblClaveUsuario.TabIndex = 4;
+            this.lblClaveUsuario.Text = "Clave:";
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(25, 210);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(118, 32);
+            this.lblNombreUsuario.TabIndex = 6;
+            this.lblNombreUsuario.Text = "Nombre:";
+            // 
+            // lblDireccionUsuario
+            // 
+            this.lblDireccionUsuario.AutoSize = true;
+            this.lblDireccionUsuario.Location = new System.Drawing.Point(12, 265);
+            this.lblDireccionUsuario.Name = "lblDireccionUsuario";
+            this.lblDireccionUsuario.Size = new System.Drawing.Size(136, 32);
+            this.lblDireccionUsuario.TabIndex = 8;
+            this.lblDireccionUsuario.Text = "Dirección:";
+            // 
+            // lblTelefonoUsuario
+            // 
+            this.lblTelefonoUsuario.AutoSize = true;
+            this.lblTelefonoUsuario.Location = new System.Drawing.Point(25, 400);
+            this.lblTelefonoUsuario.Name = "lblTelefonoUsuario";
+            this.lblTelefonoUsuario.Size = new System.Drawing.Size(123, 32);
+            this.lblTelefonoUsuario.TabIndex = 10;
+            this.lblTelefonoUsuario.Text = "Teléfono:";
+            // 
             // grbNavegacionUsuario
+            // 
             this.grbNavegacionUsuario.Controls.Add(this.btnPrimeroUsuario);
             this.grbNavegacionUsuario.Controls.Add(this.btnAnteriorUsuario);
             this.grbNavegacionUsuario.Controls.Add(this.btnSiguienteUsuario);
@@ -172,8 +186,9 @@ namespace miPrimeraAplicacion
             this.grbNavegacionUsuario.TabIndex = 12;
             this.grbNavegacionUsuario.TabStop = false;
             this.grbNavegacionUsuario.Text = "Navegación";
-
+            // 
             // btnPrimeroUsuario
+            // 
             this.btnPrimeroUsuario.Location = new System.Drawing.Point(10, 40);
             this.btnPrimeroUsuario.Name = "btnPrimeroUsuario";
             this.btnPrimeroUsuario.Size = new System.Drawing.Size(65, 50);
@@ -181,8 +196,9 @@ namespace miPrimeraAplicacion
             this.btnPrimeroUsuario.Text = "|<";
             this.btnPrimeroUsuario.UseVisualStyleBackColor = true;
             this.btnPrimeroUsuario.Click += new System.EventHandler(this.btnPrimeroUsuario_Click);
-
+            // 
             // btnAnteriorUsuario
+            // 
             this.btnAnteriorUsuario.Location = new System.Drawing.Point(75, 40);
             this.btnAnteriorUsuario.Name = "btnAnteriorUsuario";
             this.btnAnteriorUsuario.Size = new System.Drawing.Size(65, 50);
@@ -190,16 +206,9 @@ namespace miPrimeraAplicacion
             this.btnAnteriorUsuario.Text = "<";
             this.btnAnteriorUsuario.UseVisualStyleBackColor = true;
             this.btnAnteriorUsuario.Click += new System.EventHandler(this.btnAnteriorUsuario_Click);
-
-            // lblnRegistrosUsuario
-            this.lblnRegistrosUsuario.AutoSize = true;
-            this.lblnRegistrosUsuario.Location = new System.Drawing.Point(155, 55);
-            this.lblnRegistrosUsuario.Name = "lblnRegistrosUsuario";
-            this.lblnRegistrosUsuario.Size = new System.Drawing.Size(68, 26);
-            this.lblnRegistrosUsuario.TabIndex = 2;
-            this.lblnRegistrosUsuario.Text = "0 de 0";
-
+            // 
             // btnSiguienteUsuario
+            // 
             this.btnSiguienteUsuario.Location = new System.Drawing.Point(295, 40);
             this.btnSiguienteUsuario.Name = "btnSiguienteUsuario";
             this.btnSiguienteUsuario.Size = new System.Drawing.Size(65, 50);
@@ -207,8 +216,9 @@ namespace miPrimeraAplicacion
             this.btnSiguienteUsuario.Text = ">";
             this.btnSiguienteUsuario.UseVisualStyleBackColor = true;
             this.btnSiguienteUsuario.Click += new System.EventHandler(this.btnSiguienteUsuario_Click);
-
+            // 
             // btnUltimoUsuario
+            // 
             this.btnUltimoUsuario.Location = new System.Drawing.Point(360, 40);
             this.btnUltimoUsuario.Name = "btnUltimoUsuario";
             this.btnUltimoUsuario.Size = new System.Drawing.Size(65, 50);
@@ -216,8 +226,18 @@ namespace miPrimeraAplicacion
             this.btnUltimoUsuario.Text = ">|";
             this.btnUltimoUsuario.UseVisualStyleBackColor = true;
             this.btnUltimoUsuario.Click += new System.EventHandler(this.btnUltimoUsuario_Click);
-
+            // 
+            // lblnRegistrosUsuario
+            // 
+            this.lblnRegistrosUsuario.AutoSize = true;
+            this.lblnRegistrosUsuario.Location = new System.Drawing.Point(155, 55);
+            this.lblnRegistrosUsuario.Name = "lblnRegistrosUsuario";
+            this.lblnRegistrosUsuario.Size = new System.Drawing.Size(84, 32);
+            this.lblnRegistrosUsuario.TabIndex = 2;
+            this.lblnRegistrosUsuario.Text = "0 de 0";
+            // 
             // grbEdicionUsuario
+            // 
             this.grbEdicionUsuario.Controls.Add(this.btnAgregarUsuario);
             this.grbEdicionUsuario.Controls.Add(this.btnModificarUsuario);
             this.grbEdicionUsuario.Controls.Add(this.btnEliminarUsuario);
@@ -228,8 +248,9 @@ namespace miPrimeraAplicacion
             this.grbEdicionUsuario.TabIndex = 13;
             this.grbEdicionUsuario.TabStop = false;
             this.grbEdicionUsuario.Text = "Edición";
-
+            // 
             // btnAgregarUsuario
+            // 
             this.btnAgregarUsuario.Location = new System.Drawing.Point(10, 45);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(200, 50);
@@ -237,8 +258,9 @@ namespace miPrimeraAplicacion
             this.btnAgregarUsuario.Text = "Nuevo";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
-
+            // 
             // btnModificarUsuario
+            // 
             this.btnModificarUsuario.Location = new System.Drawing.Point(225, 45);
             this.btnModificarUsuario.Name = "btnModificarUsuario";
             this.btnModificarUsuario.Size = new System.Drawing.Size(200, 50);
@@ -246,8 +268,9 @@ namespace miPrimeraAplicacion
             this.btnModificarUsuario.Text = "Modificar";
             this.btnModificarUsuario.UseVisualStyleBackColor = true;
             this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
-
+            // 
             // btnEliminarUsuario
+            // 
             this.btnEliminarUsuario.Location = new System.Drawing.Point(440, 45);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(200, 50);
@@ -255,8 +278,9 @@ namespace miPrimeraAplicacion
             this.btnEliminarUsuario.Text = "Eliminar";
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
             this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
-
+            // 
             // frm_usuario
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 690);
@@ -267,13 +291,13 @@ namespace miPrimeraAplicacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de usuarios";
             this.Load += new System.EventHandler(this.frm_usuario_Load);
-
             this.grbDatosUsuario.ResumeLayout(false);
             this.grbDatosUsuario.PerformLayout();
             this.grbNavegacionUsuario.ResumeLayout(false);
             this.grbNavegacionUsuario.PerformLayout();
             this.grbEdicionUsuario.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion

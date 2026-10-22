@@ -31,10 +31,10 @@
             this.lblTituloLogin = new System.Windows.Forms.Label();
             this.lblUsuarioLogin = new System.Windows.Forms.Label();
             this.lblUsuarioClave = new System.Windows.Forms.Label();
-            this.txtUsuarioLogin = new System.Windows.Forms.TextBox();
             this.txtClaveLogin = new System.Windows.Forms.TextBox();
             this.btnIngresarLogin = new System.Windows.Forms.Button();
             this.btnSalirLogin = new System.Windows.Forms.Button();
+            this.txtUsuarioLogin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTituloLogin
@@ -67,13 +67,6 @@
             this.lblUsuarioClave.TabIndex = 2;
             this.lblUsuarioClave.Text = "Contraseña:";
             // 
-            // txtUsuarioLogin
-            // 
-            this.txtUsuarioLogin.Location = new System.Drawing.Point(432, 161);
-            this.txtUsuarioLogin.Name = "txtUsuarioLogin";
-            this.txtUsuarioLogin.Size = new System.Drawing.Size(193, 26);
-            this.txtUsuarioLogin.TabIndex = 3;
-            // 
             // txtClaveLogin
             // 
             this.txtClaveLogin.Location = new System.Drawing.Point(432, 254);
@@ -104,6 +97,13 @@
             this.btnSalirLogin.Text = "Salir";
             this.btnSalirLogin.UseVisualStyleBackColor = false;
             // 
+            // txtUsuarioLogin
+            // 
+            this.txtUsuarioLogin.Location = new System.Drawing.Point(432, 161);
+            this.txtUsuarioLogin.Name = "txtUsuarioLogin";
+            this.txtUsuarioLogin.Size = new System.Drawing.Size(193, 26);
+            this.txtUsuarioLogin.TabIndex = 3;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -118,7 +118,7 @@
             this.Controls.Add(this.lblTituloLogin);
             this.Name = "login";
             this.Text = "login";
-           
+            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,9 +129,9 @@
         private System.Windows.Forms.Label lblTituloLogin;
         private System.Windows.Forms.Label lblUsuarioLogin;
         private System.Windows.Forms.Label lblUsuarioClave;
-        private System.Windows.Forms.TextBox txtUsuarioLogin;
         private System.Windows.Forms.TextBox txtClaveLogin;
         private System.Windows.Forms.Button btnIngresarLogin;
         private System.Windows.Forms.Button btnSalirLogin;
+        private System.Windows.Forms.TextBox txtUsuarioLogin;
     }
 }

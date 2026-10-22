@@ -19,7 +19,6 @@ namespace miPrimeraAplicacion
         {
             this.grbDatosUsuario = new System.Windows.Forms.GroupBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtClaveUsuario = new System.Windows.Forms.TextBox();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtDireccionUsuario = new System.Windows.Forms.TextBox();
@@ -40,6 +39,7 @@ namespace miPrimeraAplicacion
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.btnModificarUsuario = new System.Windows.Forms.Button();
             this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.grbDatosUsuario.SuspendLayout();
             this.grbNavegacionUsuario.SuspendLayout();
             this.grbEdicionUsuario.SuspendLayout();
@@ -74,14 +74,6 @@ namespace miPrimeraAplicacion
             this.txtIdUsuario.ReadOnly = true;
             this.txtIdUsuario.Size = new System.Drawing.Size(240, 40);
             this.txtIdUsuario.TabIndex = 1;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(150, 97);
-            this.txtUsuario.MaxLength = 16;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(350, 40);
-            this.txtUsuario.TabIndex = 3;
             // 
             // txtClaveUsuario
             // 
@@ -279,6 +271,14 @@ namespace miPrimeraAplicacion
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
             this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(150, 97);
+            this.txtUsuario.MaxLength = 16;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(350, 40);
+            this.txtUsuario.TabIndex = 3;
+            // 
             // frm_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -304,7 +304,6 @@ namespace miPrimeraAplicacion
 
         private System.Windows.Forms.GroupBox grbDatosUsuario;
         private System.Windows.Forms.TextBox txtIdUsuario;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtClaveUsuario;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtDireccionUsuario;
@@ -327,5 +326,6 @@ namespace miPrimeraAplicacion
         private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.Button btnModificarUsuario;
         private System.Windows.Forms.Button btnEliminarUsuario;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }

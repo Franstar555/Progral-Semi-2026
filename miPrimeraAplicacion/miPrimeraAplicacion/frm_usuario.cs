@@ -450,6 +450,6 @@ namespace miPrimeraAplicacion
             estadoControles(false);
         }
 
-       
+
     }
 }

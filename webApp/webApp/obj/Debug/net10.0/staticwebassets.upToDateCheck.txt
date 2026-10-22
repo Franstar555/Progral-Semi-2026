@@ -1,0 +1,3 @@
+wwwroot\views\index.html
+wwwroot\img\logo.webp.webp
+C:\Users\Admin\Desktop\Progral-Semi-2026\webApp\webApp\wwwroot\views\index.html

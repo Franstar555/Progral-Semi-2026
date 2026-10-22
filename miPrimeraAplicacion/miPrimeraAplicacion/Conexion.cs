@@ -1,73 +1,116 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace miPrimeraAplicacion
 {
     internal class Conexion
     {
-        public SqlConnection objConexion = new SqlConnection();
-        public SqlCommand objComando = new SqlCommand();
-        public SqlDataAdapter objDataAdapter = new SqlDataAdapter();
-        DataSet objDs = new DataSet();
+        private readonly string cadenaConexion =
+            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbacademica.mdf;Integrated Security=True";
 
-        public Conexion()
+        private DataSet ds;
+
+        public DataSet crearDs()
         {
-            string cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbacademica.mdf;Integrated Security=True";
-            objConexion.ConnectionString = cadenaConexion;
-            objConexion.Open();
+            ds = new DataSet();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            using (SqlCommand comando = new SqlCommand(
+                @"SELECT [idUsuario], [usuario], [clave], [nombre],
+                         [direccion], [telefono]
+                  FROM [usuarios_usss148726]
+                  ORDER BY [idUsuario]", conexion))
+            using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+            {
+                adaptador.Fill(ds, "usuarios_usss148726");
+            }
+
+            return ds;
         }
 
         public DataSet obtenerDatos()
         {
-            objDs.Clear();
-            objComando.Connection = objConexion;
-            objComando.CommandText = "SELECT * FROM alumnos";
-            objDataAdapter.SelectCommand = objComando;
-            objDataAdapter.Fill(objDs, "alumnos");
-
-            objComando.CommandText = "SELECT * FROM materias";
-            objDataAdapter.Fill(objDs, "materias");
-
-            return objDs;
+            return crearDs();
         }
 
-        public string administrarDatosAlumnos(string[] datos, string accion)
+        public int procesar(string sql, params SqlParameter[] parametros)
+        {
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            using (SqlCommand comando = new SqlCommand(sql, conexion))
+            {
+                if (parametros != null && parametros.Length > 0)
+                    comando.Parameters.AddRange(parametros);
+
+                conexion.Open();
+                return comando.ExecuteNonQuery();
+            }
+        }
+
+        public string mantenimiento_usuarios_usss148726(
+            string[] datos, string accion)
         {
             try
             {
-                string sql = "";
+                string sql;
+                SqlParameter[] parametros;
 
-                // datos[0] = idAlumnos, datos[1] = código, datos[2] = nombre, datos[3] = direccion, datos[4] = telefono, datos[5] = email
                 if (accion == "nuevo")
                 {
-                    sql = "INSERT INTO alumnos (código, nombre, direccion, telefono, email) " +
-                          "VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "', '" + datos[5] + "')";
+                    sql = @"INSERT INTO [usuarios_usss148726]
+                            ([usuario], [clave], [nombre], [direccion], [telefono])
+                            VALUES (@usuario, @clave, @nombre, @direccion, @telefono)";
+
+                    parametros = new SqlParameter[]
+                    {
+                        new SqlParameter("@usuario", SqlDbType.VarChar, 35) { Value = datos[1] },
+                        new SqlParameter("@clave", SqlDbType.VarChar, 35) { Value = datos[2] },
+                        new SqlParameter("@nombre", SqlDbType.VarChar, 65) { Value = datos[3] },
+                        new SqlParameter("@direccion", SqlDbType.VarChar, 85) { Value = datos[4] },
+                        new SqlParameter("@telefono", SqlDbType.VarChar, 9) { Value = datos[5] }
+                    };
                 }
                 else if (accion == "modificar")
                 {
-                    sql = "UPDATE alumnos SET " +
-                          "código = '" + datos[1] + "', " +
-                          "nombre = '" + datos[2] + "', " +
-                          "direccion = '" + datos[3] + "', " +
-                          "telefono = '" + datos[4] + "', " +
-                          "email = '" + datos[5] + "' " +
-                          "WHERE idAlumnos = " + datos[0];
+                    sql = @"UPDATE [usuarios_usss148726]
+                            SET [usuario] = @usuario,
+                                [clave] = @clave,
+                                [nombre] = @nombre,
+                                [direccion] = @direccion,
+                                [telefono] = @telefono
+                            WHERE [idUsuario] = @id";
+
+                    parametros = new SqlParameter[]
+                    {
+                        new SqlParameter("@id", SqlDbType.Int) { Value = int.Parse(datos[0]) },
+                        new SqlParameter("@usuario", SqlDbType.VarChar, 35) { Value = datos[1] },
+                        new SqlParameter("@clave", SqlDbType.VarChar, 35) { Value = datos[2] },
+                        new SqlParameter("@nombre", SqlDbType.VarChar, 65) { Value = datos[3] },
+                        new SqlParameter("@direccion", SqlDbType.VarChar, 85) { Value = datos[4] },
+                        new SqlParameter("@telefono", SqlDbType.VarChar, 9) { Value = datos[5] }
+                    };
                 }
                 else if (accion == "eliminar")
                 {
-                    sql = "DELETE FROM alumnos WHERE idAlumnos = " + datos[0];
+                    sql = @"DELETE FROM [usuarios_usss148726]
+                            WHERE [idUsuario] = @id";
+
+                    parametros = new SqlParameter[]
+                    {
+                        new SqlParameter("@id", SqlDbType.Int) { Value = int.Parse(datos[0]) }
+                    };
+                }
+                else
+                {
+                    return "La operación solicitada no es válida.";
                 }
 
-                objComando.Connection = objConexion;
-                objComando.CommandText = sql;
-                objComando.ExecuteNonQuery();
+                int filas = procesar(sql, parametros);
 
-                return "1"; // Éxito
+                return filas == 1
+                    ? "1"
+                    : "No se pudo completar la operación.";
             }
             catch (Exception ex)
             {
@@ -75,40 +118,27 @@ namespace miPrimeraAplicacion
             }
         }
 
-        public string administrarDatosMaterias(String[] datos, String accion)
+        public string administrarDatosUsuarios(string[] datos, string accion)
         {
-            String sql = "";
-            if (accion == "nuevo")
-            {
-                sql = "INSERT INTO Materias(código,nombre,UV) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "')";
-            }
-            else if (accion == "modificar")
-            {
-                sql = "UPDATE Materias SET código='" + datos[1] + "', nombre='" + datos[2] + "', uv='" + datos[3] + "' WHERE idMateria='" + datos[0] + "'";
-            }
-            else if (accion == "eliminar")
-            {
-                sql = "DELETE FROM Materias WHERE idMateria='" + datos[0] + "'";
-            }
-            return ejecutarSQL(sql);
-        }
-        public String ejecutarSQL(String sql)
-        {
-            try
-            {
-                objComando.Connection = objConexion;
-                objComando.CommandText = sql;
-                return objComando.ExecuteNonQuery().ToString();
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+            return mantenimiento_usuarios_usss148726(datos, accion);
         }
 
-        internal string administrarDatosMaterias()
+        public bool validarLogin(string usuario, string clave)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            using (SqlCommand comando = new SqlCommand(
+                @"SELECT COUNT(*)
+                  FROM [usuarios_usss148726]
+                  WHERE [usuario] = @usuario AND [clave] = @clave",
+                conexion))
+            {
+                comando.Parameters.Add("@usuario", SqlDbType.VarChar, 35).Value = usuario;
+                comando.Parameters.Add("@clave", SqlDbType.VarChar, 35).Value = clave;
+
+                conexion.Open();
+
+                return Convert.ToInt32(comando.ExecuteScalar()) > 0;
+            }
         }
     }
 }

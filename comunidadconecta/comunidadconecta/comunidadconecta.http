@@ -1,0 +1,6 @@
+@comunidadconecta_HostAddress = http://localhost:5291
+
+GET {{comunidadconecta_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

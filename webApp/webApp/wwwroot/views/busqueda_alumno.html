@@ -31,6 +31,7 @@
     </div>
 </form>
 <script>
+listarAlumnos();
 txtBuscarAlumno.addEventListener('keyup', e => {
     listarAlumnos(txtBuscarAlumno.value);
 });
@@ -38,15 +39,33 @@ async function listarAlumnos(buscar="") {
     let alumnos = await obtenerAlumnos(buscar),
         filas = '';
     alumnos.forEach(alumno => {
-        filas += `<tr>
+        filas += `<tr onClick='mostrarDatosAlumno(${JSON.stringify(alumno)})'>
                     <td>\${alumno.codigo}</td>
                     <td>\${alumno.nombre}</td>
                     <td>\${alumno.direccion}</td>
                     <td>\${alumno.telefono}</td>
                     <td>\${alumno.email}</td>
-                    <td></td>
+                    <td><input type="button" onClick='eliminarAlumno(${JSON.stringify(alumno)}, event)' class="btn btn-outline-danger" value="Eliminar" /></td>
                 </tr>`;
     });
     document.querySelector('#tblConsultaAlumnos > tbody').innerHTML = filas;
+}
+async function eliminarAlumno(alumno, e) {
+    e.preventDefault();
+   
+    if (confirm('¿Está seguro de que desea eliminar este alumno ${alumno.nombre.trim()}?')) {
+        const respuesta = await fetch(`/api/alumnos/${alumno.idAlumno}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        }); datos = await respuesta.text();
+        if (datos && datos.length > 0) {
+            alert(`Error ${datos}`);
+            return;
+        }
+        listarAlumnos(txtBuscarAlumno.value || '');
     }
+}
+function mostrarDatosAlumno(alumno) {
+    modificarAlumno(alumno);
+}
 </script>

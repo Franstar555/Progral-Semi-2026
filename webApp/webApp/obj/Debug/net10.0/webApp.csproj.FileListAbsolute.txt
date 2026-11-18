@@ -201,6 +201,7 @@ C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net
 C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\webApp.pdb
 C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\webApp.genruntimeconfig.cache
 C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\ref\webApp.dll
-C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\cbmriv6q6y-{0}-qnlxb9ee1u-qnlxb9ee1u.gz
-C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\9nj1tvywks-{0}-tvo16arczr-tvo16arczr.gz
-C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\09ff02pszb-{0}-6spytowfbk-6spytowfbk.gz
+C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\09ff02pszb-{0}-93a37xkukk-93a37xkukk.gz
+C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\cbmriv6q6y-{0}-f5fi7c2ogs-f5fi7c2ogs.gz
+C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\hu2lwrk7pn-{0}-d5d8t8y2iv-d5d8t8y2iv.gz
+C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\obj\Debug\net10.0\compressed\9nj1tvywks-{0}-qmdyw9uqmw-qmdyw9uqmw.gz

@@ -1,7 +1,9 @@
 wwwroot\img\logo.webp.webp
-wwwroot\views\alumno.html
 wwwroot\views\index.html
+wwwroot\views\alumno.html
+wwwroot\views\busqueda_alumno.html
 wwwroot\views\app.js
+C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\wwwroot\views\busqueda_alumno.html
+C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\wwwroot\views\index.html
 C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\wwwroot\views\alumno.html
 C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\wwwroot\views\app.js
-C:\Users\Admin\Desktop\Franstar555\Progral-Semi-2026\webApp\webApp\wwwroot\views\index.html
